@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "module": "NodeNext",
+        "moduleResolution": "nodenext",
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "rootDir": "./",
+        "strict": true,
+        "target": "es5",
+        "outDir": "dist/",
+        "jsx": "react",
+        "paths": {
+            "react": [ 
+                "./node_modules/@types/react" 
+            ]
+        },
+        "lib": [
+          "es5",
+          "es6",
+          "dom",
+          "es2015.promise"
+        ],
+        "types": [
+            "react",
+            "node"
+        ],
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["dist"]
+}

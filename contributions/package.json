@@ -1,0 +1,66 @@
+{
+    "name": "@mrlm/vsts-service",
+    "version": "0.1.0",
+    "private": true,
+    "description": "",
+    "keywords": [
+        "Azure DevOps",
+        "Visual Studio Team Services"
+    ],
+    "author": {
+        "name": "Martin Hrášek",
+        "email": "martin@hrasek.email"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mrlm-net/vsts-service.git"
+    },
+    "scripts": {
+        "clean": "rimraf dist",
+        "clean:bin": "rimraf bin",
+        "compile": "yarn clean && npx webpack --mode production",
+        "compile:dev": "yarn clean && npx webpack --mode development",
+        "build": "npm run compile",
+        "build:dev": "npm run compile:dev",
+        "bump-version": "npm run package-extension -- --rev-version",
+        "bump-version:dev": "npm run package-extension:dev -- --rev-version",
+        "package-extension": "npx tfx extension create --manifest-globs vsts-extension.json src/Contributions/**/*.json --output-path bin",
+        "publish-extension": "npx tfx extension publish --manifest-globs vsts-extension.json src/Contributions/**/*.json",
+        "package-extension:dev": "npx tfx extension create --manifest-globs vsts-extension.json src/Contributions/**/*.json --overrides-file vsts-extension.local.json --output-path bin",
+        "publish-extension:dev": "tfx extension publish --manifest-globs vsts-extension.json src/Contributions/**/*.json",
+        "start:dev": "webpack-dev-server --mode development"
+    },
+    "dependencies": {
+        "@mrlm/vsts-sdk": "0.0.4",
+        "azure-devops-extension-api": "^4.234.0",
+        "azure-devops-extension-sdk": "^4.0.2",
+        "azure-devops-ui": "^2.246.0",
+        "deepmerge": "^4.3.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.21.8",
+        "@types/react": "^18.3.1",
+        "@types/react-dom": "^18.3.1",
+        "copy-webpack-plugin": "^7.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.7.1",
+        "rimraf": "^6.0.1",
+        "sass": "^1.62.1",
+        "sass-loader": "^16.0.2",
+        "style-loader": "^3.3.4",
+        "tfx-cli": "^0.17.0",
+        "ts-loader": "^8.0.5",
+        "typescript": "^5.6.2",
+        "webpack": "^5.23.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.4"
+    },
+    "overrides": {
+        "tfx-cli": {
+            "xml2js": "0.5.0"
+        }
+    },
+    "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}

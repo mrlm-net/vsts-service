@@ -1,0 +1,38 @@
+{
+    "manifestVersion": 1,
+    "id": "vsts-sdk",
+    "publisher": "wanted-solutions",
+    "version": "0.1.0",
+    "name": "WANTED.solutions VSTS SDK Examples",
+    "description": "Examples for the VSTS SDK produced by WANTED.solutions s.r.o. team.",
+    "categories": [
+        "Azure Repos",
+        "Azure Boards",
+        "Azure Pipelines",
+        "Azure Test Plans",
+        "Azure Artifacts"
+    ],
+    "targets": [{
+        "id": "Microsoft.VisualStudio.Services.Cloud"
+    }],
+    "scopes": [
+        "vso.graph_manage",
+        "vso.extension_manage"
+    ],
+    "icons": {
+        "default": "static/icon-64x64.png"
+    },
+    "content": {
+        "details": {
+            "path": "docs/OVERVIEW.md"
+        }
+    },
+    "files": [{
+        "addressable": true,
+        "path": "static"
+    }, {
+        "addressable": true,
+        "path": "dist"
+    }],
+    "contributions": []
+}

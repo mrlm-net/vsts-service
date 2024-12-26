@@ -1,0 +1,13 @@
+{
+    "contributions": [{
+        "id": "collection-settings-hub",
+        "type": "ms.vss-web.hub",
+        "targets": [
+            "ms.vss-web.collection-admin-hub-group"
+        ],
+        "properties": {
+            "name": "Collection Settings",
+            "uri": "dist/CollectionSettings/CollectionSettings.html"
+        }
+    }] 
+}

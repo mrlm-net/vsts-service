@@ -1,0 +1,6 @@
+{
+    "id": "vsts-sdk-examples",
+    "baseUri": "https://localhost:8765",
+    "name": "DEV - WANTED.solutions SDK Examples",
+    "version": "0.1.6"
+}
